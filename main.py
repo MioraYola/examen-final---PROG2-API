@@ -2,6 +2,20 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/ping")
-async def ping():
-    return {"ping": "pong"}
+@app.get("/health")
+def health():
+    return 
+list_phones=[] 
+
+ phone(BaseModels){
+        identifier str,
+        brand str,
+        model str, 
+        characteristics Characteristics {
+           ram_memory int, 
+           rom_memory int
+        }
+    }
+@app.post("/phones")
+def phone(): 
+    
