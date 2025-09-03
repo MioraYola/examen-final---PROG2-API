@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info: 
+  title: STD2401
+  version: 99.99.0
+  description: This is specification of STD24021
+servers:
+  - url: "http://localhost:800"
+paths: 
+  /health: 
+    get: 
+      responses: 
+        200: 
+          description: return ok
+          content:
+            text/plain: 
+              schema: 
+                type: string
+                example: ok
+  /phones: 
+    post: 
+        requestBody:
+          description: créer une liste de phones
+          content:
+            application/json: 
+              schema: 
+                items: 
+                  $ref: "#/components/schemas/Phones"
+        responses:
+          200: 
+            description: créer une liste de phones
+            content:
+              application/json:
+                schema: 
+                  items: 
+                    $ref: "#/components/schemas/Phones"
+
+components:
+  schemas:
+    Phones: 
+      properties:
+        identifier: 
+          type: string
+        brand: 
+          type: string
+        model: 
+          type: string
+        characteristics: 
+          properties:
+            ram_memory: 
+              type: integer
+            rom_memory: 
+              type: integer
+
+        
+
