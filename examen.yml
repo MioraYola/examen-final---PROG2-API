@@ -42,7 +42,33 @@ paths:
               schema: 
                 items: 
                   $ref: "#/components/schemas/Phones"
- 
+  /phones/{id}: 
+    get: 
+      parameters:
+      - in: query
+        name: id
+        schema:
+          type: integer
+          items: 
+             $ref: "#/components/schemas/Phones"
+      responses:
+        200: 
+          description: phone trouvé à l'aide d'un identifiant
+          content:
+            application/json:
+              schema: 
+                type: array
+                items:
+                  $ref: "#/components/schemas/Phones"
+
+        400: 
+          description: 404 not found
+          content:
+            text/plain:
+              schema: 
+                type: string
+                example: le phone contenant cet id n'existe pas ou n'a pas été retrouvé 
+    
 
 components:
   schemas:
