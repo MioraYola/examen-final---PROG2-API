@@ -45,8 +45,9 @@ paths:
   /phones/{id}: 
     get: 
       parameters:
-      - in: query
+      - in: path
         name: id
+        required: true
         schema:
           type: integer
           items: 
