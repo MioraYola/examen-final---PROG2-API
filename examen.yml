@@ -78,7 +78,12 @@ paths:
           schema: 
             type: integer
       responses: 
-      
+        200: 
+          description: retourne le phone avec les caracteres mis à jour 
+          content:
+            application/json:
+              schema:   
+
 
 
 components:
