@@ -69,7 +69,17 @@ paths:
               schema: 
                 type: string
                 example: le phone contenant cet id n'existe pas ou n'a pas été retrouvé 
-    
+  /phones/{id}/characteristics: 
+    put: 
+      parameters:
+        - in: path
+          required: true 
+          name: id 
+          schema: 
+            type: integer
+      responses: 
+      
+
 
 components:
   schemas:
@@ -83,10 +93,12 @@ components:
           type: string
         characteristics: 
           properties:
-            ram_memory: 
-              type: integer
-            rom_memory: 
-              type: integer
+            Characteristics: 
+              properties:
+                ram_memory: 
+                  type: integer
+                rom_memory: 
+                  type: integer
 
         
 

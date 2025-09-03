@@ -2,12 +2,12 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/health")
+@app.get("/health", )
 def health():
-    return 
+    return {"message": "ok"}
 list_phones=[] 
 
- phone(BaseModels){
+     phone(BaseModels){
         identifier str,
         brand str,
         model str, 
@@ -18,4 +18,3 @@ list_phones=[]
     }
 @app.post("/phones")
 def phone(): 
-    
